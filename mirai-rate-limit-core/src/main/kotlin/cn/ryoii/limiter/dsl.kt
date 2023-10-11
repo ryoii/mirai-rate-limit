@@ -3,7 +3,6 @@ package cn.ryoii.limiter
 import net.mamoe.mirai.event.ConcurrencyKind
 import net.mamoe.mirai.event.EventChannel
 import net.mamoe.mirai.event.EventPriority
-import net.mamoe.mirai.event.GlobalEventChannel
 import net.mamoe.mirai.event.events.BotEvent
 import kotlin.coroutines.EmptyCoroutineContext
 

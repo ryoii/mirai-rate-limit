@@ -11,10 +11,6 @@ import kotlin.time.Duration
  * 令牌桶限流器实现
  *
  * 根据 `limitPerMinute` 计算出每个令牌生成的时间间隔，通过间隔计算出每个请求进入时的可用令牌数。
- *
- * @param overloadRate 并发控制，
- * @param limiterPerDuration 平均每个单位时间限流数
- * @param duration 单位时间
  */
 open class RateLimiter(warmUp: Int, burstFactor: Double, tokenPerDuration: Int, duration: Duration) {
     private var stored: Int
