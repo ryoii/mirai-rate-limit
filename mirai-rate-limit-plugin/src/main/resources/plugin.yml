@@ -1,0 +1,6 @@
+id: cn.ryoii.mirai-rate-limit
+name: mirai-rate-limit
+main: cn.ryoii.limiter.RateLimitPlugin
+version: 1.0.0
+author: ryoii
+info: Mirai Rate Limit Plugin

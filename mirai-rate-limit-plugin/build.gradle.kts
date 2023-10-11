@@ -4,8 +4,19 @@ plugins {
     id("net.mamoe.mirai-console")
 }
 
-dependencies {
+version = "1.0.0"
 
+val miraiVersion: String by lazy {
+    rootProject.buildscript.configurations.getByName("classpath").dependencies
+        .first { it.name == "net.mamoe.mirai-console.gradle.plugin" }
+        .version!!
+}
+
+dependencies {
+    implementation(project(":mirai-rate-limit-core"))
+
+    testImplementation("net.mamoe:mirai-core-mock:$miraiVersion")
+    testImplementation(kotlin("test-junit5"))
 }
 
 tasks.test {

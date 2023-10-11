@@ -1,9 +1,11 @@
+import org.jetbrains.kotlin.ir.backend.js.compile
+
 plugins {
     kotlin("jvm")
     id("me.him188.maven-central-publish")
 }
 
-version = "1.1.0"
+version = "1.2.0"
 
 val miraiVersion: String by lazy {
     rootProject.buildscript.configurations.getByName("classpath").dependencies
@@ -12,7 +14,9 @@ val miraiVersion: String by lazy {
 }
 
 dependencies {
-    compileOnly("net.mamoe:mirai-core-api:${miraiVersion}")
+    api("net.mamoe:mirai-core-api:${miraiVersion}")
+
+    testImplementation(kotlin("test-junit5"))
 }
 
 tasks.test {
