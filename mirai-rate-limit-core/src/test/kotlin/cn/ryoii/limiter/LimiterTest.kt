@@ -13,7 +13,7 @@ class LimiterTest {
 
     @Test
     fun test1QPS() {
-        val limiter = RateLimiter(0, 1, 1.seconds)
+        val limiter = RateLimiter(0, .0, 1, 1.seconds)
         val count = AtomicInteger(0)
 
         runBlocking {
@@ -34,7 +34,7 @@ class LimiterTest {
 
     @Test
     fun test5QPS() {
-        val limiter = RateLimiter(0, 5, 1.seconds)
+        val limiter = RateLimiter(0, .0, 5, 1.seconds)
         val count = AtomicInteger(0)
 
         runBlocking {
@@ -55,7 +55,7 @@ class LimiterTest {
 
     @Test
     fun test5QPSWithMaxBurst() {
-        val limiter = RateLimiter(5, 5, 1.seconds)
+        val limiter = RateLimiter(5, .0, 5, 1.seconds)
         val count = AtomicInteger(0)
 
         runBlocking {
@@ -77,6 +77,6 @@ class LimiterTest {
     }
 
     private fun Int.assertEqualsEnough(expect: Int, enough: Int = 1) {
-        assert(this in expect - enough..expect + enough) { "value $this not in range [${expect-enough}, ${expect+enough}]" }
+        assert(this in expect - enough..expect + enough) { "value $this not in range [${expect - enough}, ${expect + enough}]" }
     }
 }
