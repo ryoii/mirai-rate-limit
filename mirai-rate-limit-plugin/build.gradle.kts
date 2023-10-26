@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm")
     id("me.him188.maven-central-publish")
     id("net.mamoe.mirai-console")
+    kotlin("plugin.serialization")
 }
 
 version = "1.0.0"
