@@ -4,6 +4,8 @@
 
 ## 配置文件
 ```yaml
+# .\config\cn.ryoii.mirai-rate-limit\rate-limit.yml
+
 # 全局限流
 global:
   # 是否开启，默认开启
